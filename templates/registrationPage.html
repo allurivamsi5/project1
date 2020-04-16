@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>RegistrationPage!</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -9,18 +8,21 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
         <link rel = "stylesheet" href="{{ url_for('static',filename='registrationPage.css') }}">
         <!-- <link rel="stylesheet" href="registrationPage.css"> -->
+
     </head>
     <body >
-        <img src="resource directory image.png">
-        <form action="{{url_for('info')}}"method="post">
-            
+        <!-- <img src="resource directory image.png"> -->
+        <img src="{{url_for('static', filename='resource directory image.png')}}">
+        
+        <form action="{{url_for('info')}}"method="POST">
+        <!-- <form action="/action_page.php"> -->
             <label><input class = "inp" name = "email" type="text" placeholder="EMAIL_ID"></label><br>
             <label><input class = "inp" name = "city" type="text" placeholder="CITY"></label><br>
             <label><input class = "inp" name = "username" type="text" placeholder="USERNAME"></label><br>
             <label><input class = "inp" type="password" placeholder="PASSWORD"></label><br>
-           <label><input class = "check" type="checkbox" name="remember"><font size = "2" color = "DodgerBlue">Remember me</font></label>
-            <label><a class = "F_P" href="#"><font size = "2" color = "DodgerBlue"> Forgot password?</font></a></label><br><br>
-            <button type="submit" class="registerbtn">LOGIN</button>
+           <label><input class = "check" type="checkbox" name="remember"><font size = "2" color = "DodgerBlue">Remember me</font></label><br>
+            <!-- <label><a class = "F_P" href="#"><font size = "2" color = "DodgerBlue"> Forgot password?</font></a></label><br><br> -->
+            <button type="submit" class="registerbtn">REGISTER</button>
         </form>
     </body>
 </html>

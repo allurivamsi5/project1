@@ -25,11 +25,15 @@ db = scoped_session(sessionmaker(bind=engine))
 def index():
     return render_template("registrationPage.html")
 
-@app.route("/Details",methods=["POST"])
+@app.route("/register",methods=["POST","GET"])
 def info():
-   email=request.form.get("email") 
-   
-   city=request.form.get("city") 
-   username=request.form.get("username") 
-   return render_template("Details.html",email=email,city=city,username=username)
+    if request.method == "POST":
+
+        email=request.form.get("email") 
+        
+        city=request.form.get("city") 
+        username=request.form.get("username") 
+        return render_template("Details.html",email=email,city=city,username=username)
+    else:
+        return render_template("registrationPage.html")
 

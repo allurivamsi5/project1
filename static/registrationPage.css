@@ -14,7 +14,7 @@ form{
     position:absolute;
     left: 40%;
     right: 40%;
-    bottom: 30%;
+    bottom: 20%;
 }
 input.inp{
     width: 130%;
@@ -30,11 +30,7 @@ input.check{
     width: 12px;
     height: 12px;  
 }
-a.F_P{
-    position:absolute;
-    left: 55%;
-    bottom: 14%;
-}
+
 button{
     position:absolute;
     width: 40%;
