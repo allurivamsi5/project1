@@ -6,13 +6,13 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-        <link rel="stylesheet" href="registrationPage.css">
+        <link rel = "stylesheet" href="{{ url_for('static',filename='registrationPage.css') }}">
     </head>
     <body >
-        <img src="resource directory image.png">
+        <img class = "pic">
         <form action="/action_page.php">
             <label><input class = "inp" type="text" placeholder="USERNAME"></label><br>
-            <label><input class = "inp" type="text" placeholder="PASSWORD"></label><br>
+            <label><input class = "inp" type="" placeholder="PASSWORD"></label><br>
            <label><input class = "check" type="checkbox" name="remember"><font size = "2" color = "DodgerBlue">Remember me</font></label>
             <label><a href="#"><font size = "2" color = "DodgerBlue"> Forgot password?</font></a></label><br><br>
             <button type="submit" class="registerbtn">LOGIN</button>
