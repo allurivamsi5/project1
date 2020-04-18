@@ -23,13 +23,13 @@ db.init_app(app)
 engine = create_engine(os.getenv("DATABASE_URL"))
 Session = scoped_session(sessionmaker(bind=engine))
 session = Session()
-# db = scoped_session(sessionmaker(bind=engine))
+
 
 
 
 @app.route("/")
 def index():
-    # return render_template("registrationPage.html")
+   
     return redirect("/register")
 
 @app.route("/register",methods=["POST","GET"])
@@ -37,13 +37,16 @@ def info():
     db.create_all()
     if request.method == "POST":
         users_data = schema(request.form["email"], request.form["city"], request.form["username"], request.form["password"])
-        # email=request.form.get("email") 
-        # city=request.form.get("city") 
-        # username=request.form.get("username") 
-        # password=request.form.get("password")
+        user = schema.query.filter_by(email=request.form['email']).first()
+        if user is not None:
+            var1 = "Error: User is already existing. Please try to register with a new"
+            return render_template("registrationPage.html", message = var1)
+    
         db.session.add(users_data)
         db.session.commit()
-        # return render_template("Details.html",email=email,city=city,username=username, password = password)
-        return render_template("registrationPage.html")
+        
+        var2 = 'Registration Success'
+       
+        return render_template("registrationPage.html", message = var2)
     else:
         return render_template("registrationPage.html")
