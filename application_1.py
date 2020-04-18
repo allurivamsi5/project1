@@ -50,3 +50,8 @@ def info():
         return render_template("registrationPage.html", message = var2)
     else:
         return render_template("registrationPage.html")
+
+@app.route('/admin')
+def admin():
+    user_data = schema.query.all()
+    return render_template("admin.html",admin = user_data)
