@@ -34,6 +34,15 @@
         </div>
         {%endif%}
 
+        {% if Error_message %}
+        <div class = "container" style="text-align: center;">
+        <div class="alert alert-danger">
+        <a class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        {{Error_message}}
+        </div>
+        </div>
+        {%endif%}
+
        
     </body>
 </html>

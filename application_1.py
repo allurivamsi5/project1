@@ -39,8 +39,8 @@ def info():
         users_data = schema(request.form["email"], request.form["city"], request.form["username"], request.form["password"])
         user = schema.query.filter_by(email=request.form['email']).first()
         if user is not None:
-            var1 = "Error: User is already existing. Please try to register with a new"
-            return render_template("registrationPage.html", message = var1)
+            var1 = "Error: User is already existing. Please try to register with a new!"
+            return render_template("registrationPage.html", Error_message = var1)
     
         db.session.add(users_data)
         db.session.commit()
