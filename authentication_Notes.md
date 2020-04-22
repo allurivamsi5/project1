@@ -16,4 +16,5 @@ Task 2 - Allow authenticated user to home and logout
 
 
 Task 3 - Import Books
-1. 
+1. Imported books to the postgreSQL database.
+2. Time taken for task2 - 2hours 30 min.
