@@ -1,5 +1,5 @@
 body{
-    background-color:rgb(216, 212, 212);
+    background-color:rgb(53, 216, 75);
 }
 img {
     position:absolute;
@@ -10,33 +10,84 @@ img {
     width: 20%;
     border-radius: 50%;
 }
-form{
+h1{
     position:absolute;
-    left: 40%;
-    right: 40%;
-    bottom: 40%;
-}
-input.inp{
-    width: 130%;
-    border-radius: 0 10px;
-
-}
-::placeholder{
-    color: rgb(104, 100, 100);
+    left: 43%;
+    bottom: 53%;
+    font-weight: bold;
     
 }
+.vl{
     
-input.check{
-    width: 12px;
-    height: 12px;  
+    border-left: 6px solid rgb(214, 32, 32);
+    height: 220px;
+    position: absolute;
+    left: 37%;
+    margin-left: -3px;
+    bottom:18%;  
+}
+.vl2{
+    
+    border-left: 6px solid rgb(214, 32, 32);
+    height: 220px;
+    position: absolute;
+    left: 65%;
+    margin-left: -3px;
+    bottom:18%;  
 }
 
-button{
+
+input.inp4{
     position:absolute;
-    width: 40%;
-    left: 30%;
+    width: 26%;
+    left:38%;
+    bottom:26%;
+}
+input.inp3{
+    position:absolute;
+    width: 26%;
+    left:38%;
+    bottom:34%;
+}
+input.inp2{
+    position:absolute;
+    width: 26%;
+    left:38%;
+    bottom:42%;
+}
+input.inp1{
+    position:absolute;
+    width: 26%;
+    left:38%;
+    bottom:50%;
+}
+button.registerbtn{
+    position:absolute;
+    width: 12%;
+    left: 38%;
+    bottom:18%;
     background-color: dodgerblue;
     color: white;
     border-radius: 0 10px;
     
+}
+button.inp_log{
+    position:absolute;
+    width: 12%;
+    left: 52%;
+    bottom:18%;
+    background-color: dodgerblue;
+    color: white;
+    border-radius: 0 10px;  
+}
+.container{
+    position:absolute;
+    width: 30%;
+    bottom:1%;
+    left:36%;
+}
+h2{
+    position: absolute;
+    bottom: 4%;
+    left: 30%;
 }

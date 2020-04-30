@@ -97,18 +97,67 @@
                 bottom:1%;
                 left:36%;
             }
+            h2{
+                position: absolute;
+                bottom: 4%;
+                left: 30%;
+            }
+            
        </style>
 
     </head>
     <body class = "b">
-
+        
+        <script  type="text/javascript">
+            function checkPassword(str)
+            {
+            var validpwd = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+            return validpwd.test(str);
+            }
+            function ValidateEmail(mail) 
+            {
+            if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail))
+              {
+                return true
+              }
+                return false
+            }
+            function checkForm(form)
+            {
+                console.log("Hello");
+                if(form.email.value == "") {
+                    document.getElementById("textdisplay").innerHTML="Error: Username cannot be blank!";
+                return false;
+                }
+                else if(!ValidateEmail(form.email.value)) {
+                  document.getElementById("textdisplay").innerHTML="You have entered an invalid email address!";
+                  return false;
+                } else {
+                  if(form.password.value != "") {
+                            if(!checkPassword(form.password.value)) {
+                                document.getElementById("textdisplay").innerHTML="The password should have at least 6 characters, with at least one uppercase letter, one lowercase letter, one number and a symbol.";
+                            return false;
+                            }
+                  
+                    
+                    }
+                else {
+                    document.getElementById("textdisplay").innerHTML="Error: Password cannot be blank!";
+                    return false;
+                }
+                }
+                
+                return true;
+            }
+           </script>
+          
 
         <img src="{{url_for('static', filename='resource directory image.png')}}">
         <h1>WELCOME</h1>
         <div>
         <div class="vl"></div>
         <div class="vl2"></div>
-        <form  class = "reg" action="{{url_for('info')}}"method="POST">
+        <form  class = "reg" action="{{url_for('info')}}"method="POST" onsubmit="return checkForm(this);">
             
             <label><input class = "inp1" name = "email" type="text" placeholder="EMAIL_ID"></label><br><br>
             <label><input class = "inp2" name = "city" type="text" placeholder="CITY"></label><br>
@@ -118,7 +167,10 @@
            
             <button type="submit" class="registerbtn">REGISTER</button><br><br>
             <button class = "inp_log" type="submit" formaction = "http://127.0.0.1:5000/auth"><b>Login</b></button>
+            <h2 style="text-align: center; color:brown;" id = "textdisplay"></h2>
         </form>
+   
+       
         </div>
         {% if message %}
         <div class = "container" style="text-align: center;">
