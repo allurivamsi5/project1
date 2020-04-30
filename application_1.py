@@ -1,5 +1,6 @@
 import os
 from schema import *
+from books_database import *
 from flask import Flask, session, render_template,request,redirect
 from flask_session import Session
 from sqlalchemy import create_engine,desc
@@ -86,3 +87,4 @@ def logout():
     except:
         var1 = "You must first log in to logout"
         return render_template("registrationPage.html",Error_message=var1)
+
